@@ -1,0 +1,22 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  ci:
+    name: CI
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run Action
+        id: semver-tool
+        uses: vitorfhc/use-semver-tool@main
+        with:
+          cmd: validate 'v1.2.3'
+      - name: Test
+        env:
+          OUTPUT: ${{ steps.semver-tools.outputs.output }}
+        run: '[ "$OUTPUT" == "valid" ] || exit 1'
