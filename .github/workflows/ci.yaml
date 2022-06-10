@@ -17,5 +17,5 @@ jobs:
           cmd: validate v1.2.3
       - name: Test
         env:
-          OUTPUT: ${{ steps.semver-tools.outputs.output }}
+          OUTPUT: ${{ steps.semver-tool.outputs.output }}
         run: '[ "$OUTPUT" == "valid" ] || exit 1'
