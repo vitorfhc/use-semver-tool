@@ -1,0 +1,17 @@
+name: Semver Tool
+description: Wrapper for fsaintjacques/semver-tool
+branding:
+  icon: terminal
+  color: gray-dark
+inputs:
+  cmd:
+    description: command to run
+    required: true
+outputs:
+  outputs:
+    description: output of the command
+runs:
+  using: docker
+  image: docker/Dockerfile
+  args:
+    - ${{ inputs.cmd }}
