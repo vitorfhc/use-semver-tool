@@ -10,7 +10,6 @@ jobs:
     name: CI
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
       - name: Run Action
         id: semver-tool
         uses: vitorfhc/use-semver-tool@main
