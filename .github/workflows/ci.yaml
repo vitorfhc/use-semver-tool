@@ -14,7 +14,7 @@ jobs:
         id: semver-tool
         uses: vitorfhc/use-semver-tool@main
         with:
-          cmd: validate 'v1.2.3'
+          cmd: validate v1.2.3
       - name: Test
         env:
           OUTPUT: ${{ steps.semver-tools.outputs.output }}
