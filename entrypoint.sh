@@ -27,5 +27,5 @@ if [ "$?" -ne 0 ]; then
     exit 1
 else
     log "Output: $(cat $OUT_FILE)"
-    echo ::set-output name=output::"$(cat $OUT_FILE)"
+    echo output="$(cat $OUT_FILE)" >> $GITHUB_OUTPUT
 fi
